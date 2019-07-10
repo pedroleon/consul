@@ -19,7 +19,7 @@
                       aria: { describedby: "summary-help-text" } %>
     </div>
 
-    <div class="ckeditor small-12 column">
+    <div class="small-12 column">
       <%= f.label :description, t("proposals.form.proposal_text") %>
       <%= f.text_area :description, maxlength: Legislation::Proposal.description_max_length, class: "html-area", label: false %>
     </div>
