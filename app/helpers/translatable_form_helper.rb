@@ -95,7 +95,7 @@ module TranslatableFormHelper
   end
 
   class TranslationsFieldsBuilder < FoundationRailsHelper::FormBuilder
-    %i[text_field text_area cktext_area].each do |field|
+    %i[text_field text_area].each do |field|
       define_method field do |attribute, options = {}|
         custom_label(attribute, options[:label], options[:label_options]) +
           help_text(options[:hint]) +
