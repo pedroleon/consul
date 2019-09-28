@@ -38,7 +38,7 @@ module DocumentsHelper
                          class: "button hollow #{klass}"
     html += builder.file_field :attachment,
                                label: false,
-                               accept: accepted_content_types_extensions(document.documentable_type.constantize),
+                               accept: accepted_content_types_extensions,
                                class: "js-document-attachment",
                                data: {
                                  url: document_direct_upload_url(document),

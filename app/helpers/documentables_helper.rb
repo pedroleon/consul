@@ -16,17 +16,17 @@ module DocumentablesHelper
     documentable_class.accepted_content_types
   end
 
-  def accepted_content_types_extensions(documentable_class)
+  def accepted_content_types_extensions
     Setting.accepted_content_types_for("documents").map { |content_type| ".#{content_type}" }.join(",")
   end
 
-  def documentable_humanized_accepted_content_types(documentable_class)
+  def documentable_humanized_accepted_content_types
     Setting.accepted_content_types_for("documents").join(", ")
   end
 
   def documentables_note(documentable)
     t "documents.form.note", max_documents_allowed: max_documents_allowed(documentable),
-                             accepted_content_types: documentable_humanized_accepted_content_types(documentable.class),
+                             accepted_content_types: documentable_humanized_accepted_content_types,
                              max_file_size: max_file_size(documentable.class)
   end
 
